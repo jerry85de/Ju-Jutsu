@@ -5,6 +5,10 @@ import { renderHome, renderBelt } from "./ui.js";
 const app = document.getElementById("app");
 
 async function init() {
+  await checkForUpdate();
+  await loadData();
+  render();
+}
   await loadData();
   render();
 }
