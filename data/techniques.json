@@ -2,14 +2,14 @@
   "belts": [
     {
       "id": "yellow",
-      "name": "5. Kyu",
-      "order": 1,
+      "name": "4. Kyu",
+      "order": 2,
       "requirements": []
     },
     {
       "id": "orange",
-      "name": "4. Kyu",
-      "order": 2,
+      "name": "3. Kyu",
+      "order": 3,
       "requirements": []
     },
     {
@@ -270,7 +270,7 @@
       ]
     },
     {
-      "id": "körperabbiegen",
+      "id": "koerperabbiegen",
       "name": "Körperabbiegen",
       "translation": "",
       "description": "",
@@ -338,7 +338,7 @@
       ]
     },
     {
-      "id": "führhand-schlaghand",
+      "id": "fuehrhand-schlaghand",
       "name": "Handballentechnik Führhand/Schlaghand",
       "translation": "",
       "description": "",
@@ -355,7 +355,7 @@
       ]
     },
     {
-      "id": "führhand-schlaghand-hammerfaust",
+      "id": "fuehrhand-schlaghand-hammerfaust",
       "name": "Handballentechnik Führand/Schlaghand/Hammerfaust",
       "translation": "",
       "description": "",
@@ -957,91 +957,6 @@
           "beltId": "blue",
           "categoryId": "throws",
           "order": 2
-        }
-      ]
-    },
-    {
-      "id": "placeholder-orange-locks",
-      "name": "Hebeltechniken (leer)",
-      "translation": "",
-      "description": "",
-      "media": {
-        "images": [],
-        "videos": []
-      },
-      "beltRefs": [
-        {
-          "beltId": "orange",
-          "categoryId": "locks",
-          "order": 0
-        }
-      ]
-    },
-    {
-      "id": "placeholder-green-defense",
-      "name": "Abwehrtechniken (leer)",
-      "translation": "",
-      "description": "",
-      "media": {
-        "images": [],
-        "videos": []
-      },
-      "beltRefs": [
-        {
-          "beltId": "green",
-          "categoryId": "defense",
-          "order": 0
-        }
-      ]
-    },
-    {
-      "id": "placeholder-green-locks",
-      "name": "Hebeltechniken (leer)",
-      "translation": "",
-      "description": "",
-      "media": {
-        "images": [],
-        "videos": []
-      },
-      "beltRefs": [
-        {
-          "beltId": "green",
-          "categoryId": "locks",
-          "order": 0
-        }
-      ]
-    },
-    {
-      "id": "placeholder-blue-ukemi",
-      "name": "Fallschule (leer)",
-      "translation": "",
-      "description": "",
-      "media": {
-        "images": [],
-        "videos": []
-      },
-      "beltRefs": [
-        {
-          "beltId": "blue",
-          "categoryId": "ukemi",
-          "order": 0
-        }
-      ]
-    },
-    {
-      "id": "placeholder-blue-defense",
-      "name": "Abwehrtechniken (leer)",
-      "translation": "",
-      "description": "",
-      "media": {
-        "images": [],
-        "videos": []
-      },
-      "beltRefs": [
-        {
-          "beltId": "blue",
-          "categoryId": "defense",
-          "order": 0
         }
       ]
     }
