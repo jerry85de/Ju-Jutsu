@@ -1,37 +1,7 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-}
-
-a { text-decoration: none; color: blue; }
-
-ul { padding-left: 20px; }
-
-button { margin: 5px; }
-
-textarea { width: 100%; height: 100px; }
-
-.status {
-  padding: 2px 6px;
-  border-radius: 6px;
-  font-size: 12px;
-  margin-left: 8px;
-}
-
-.status-learning { background: #ddd; }
-.status-practicing { background: orange; color: white; }
-.status-ready { background: green; color: white; }
-
-.progress-bar {
-  width: 100%;
-  background: #eee;
-  height: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.progress-fill {
-  height: 10px;
-  background: green;
-  border-radius: 5px;
-}
+body { font-family: Arial; margin:20px;}
+.status {padding:2px 6px;border-radius:6px;font-size:12px;margin-left:8px;}
+.status-learning{background:#ddd;}
+.status-practicing{background:orange;color:white;}
+.status-ready{background:green;color:white;}
+.progress-bar{width:100%;background:#eee;height:10px;border-radius:5px;}
+.progress-fill{height:10px;background:green;}

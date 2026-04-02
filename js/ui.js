@@ -1,117 +1,21 @@
-import {
-  getBelts,
-  getBeltById,
-  getTechniquesByBelt,
-  getTechniqueById,
-  getCategories
-} from "./data.js";
+import {getBelts,getBeltById,getTechniquesByBelt,getCategories} from "./data.js";
 
-import { getStatus, setStatus, getNote, setNote } from "./storage.js";
-
-function getStatusLabel(status) {
-  if (status === "learning") return "Lernen";
-  if (status === "practicing") return "Üben";
-  if (status === "ready") return "Bereit";
-  return "";
+export function renderHome(){
+ const belts=getBelts();
+ return `<h2>Gürtel</h2><ul>${belts.map(b=>`<li><a href="#/belt/${b.id}">${b.name}</a></li>`).join("")}</ul>`;
 }
 
-function getProgress(techniques) {
-  if (techniques.length === 0) return 0;
-  const ready = techniques.filter(t => getStatus(t.id) === "ready").length;
-  return Math.round((ready / techniques.length) * 100);
+export function renderBelt(id){
+ const belt=getBeltById(id);
+ const tech=getTechniquesByBelt(id);
+ const cats=getCategories();
+
+ return `
+ <h2>${belt.name}</h2>
+ ${cats.map(c=>{
+  const filtered=tech.filter(t=>t.beltRefs.some(r=>r.categoryId===c.id && r.beltId===id));
+  return `<h3>${c.name}</h3>
+  <ul>${filtered.map(t=>`<li>${t.name}</li>`).join("")}</ul>`;
+ }).join("")}
+ `;
 }
-
-export function renderHome() {
-  const belts = getBelts();
-  return `
-    <h2>Gürtel</h2>
-    <ul>
-      ${belts.map(b => `<li><a href="#/belt/${b.id}">${b.name}</a></li>`).join("")}
-    </ul>
-  `;
-}
-
-export function renderBelt(id) {
-  const belt = getBeltById(id);
-  const techniques = getTechniquesByBelt(id);
-  const categories = getCategories();
-
-  if (!belt) return "<p>Gurt nicht gefunden</p>";
-
-  const progress = getProgress(techniques);
-
-  return `
-    <h2>${belt.name}</h2>
-    <p><strong>Fortschritt:</strong> ${progress}%</p>
-    <div class="progress-bar">
-      <div class="progress-fill" style="width:${progress}%"></div>
-    </div>
-
-    <h3>Voraussetzungen</h3>
-    <ul>
-      ${belt.requirements.map(r => `<li><strong>${r.label}:</strong> ${r.value}</li>`).join("")}
-    </ul>
-
-    <h3>Techniken</h3>
-
-    ${categories.map(cat => {
-      const filtered = techniques.filter(t =>
-        t.beltRefs.some(ref =>
-          ref.beltId === id && ref.categoryId === cat.id
-        )
-      );
-
-      if (filtered.length === 0) return "";
-
-      return `
-        <h4>${cat.name}</h4>
-        <ul>
-          ${filtered.map(t => `
-            <li>
-              <a href="#/technique/${t.id}">${t.name}</a>
-              <span class="status status-${getStatus(t.id)}">
-                ${getStatusLabel(getStatus(t.id))}
-              </span>
-            </li>
-          `).join("")}
-        </ul>
-      `;
-    }).join("")}
-
-    <p><a href="#">← Zurück</a></p>
-  `;
-}
-
-export function renderTechnique(id) {
-  const t = getTechniqueById(id);
-
-  if (!t) return "<p>Technik nicht gefunden</p>";
-
-  return `
-    <h2>${t.name}</h2>
-    <p><em>${t.translation}</em></p>
-    <p>${t.description}</p>
-
-    <h3>Status</h3>
-    <button onclick="setStatusUI('${id}', 'learning')">Erlernen</button>
-    <button onclick="setStatusUI('${id}', 'practicing')">Üben</button>
-    <button onclick="setStatusUI('${id}', 'ready')">Bereit</button>
-
-    <h3>Notizen</h3>
-    <textarea id="note">${getNote(id)}</textarea>
-
-    <p><a href="javascript:history.back()">← Zurück</a></p>
-  `;
-}
-
-window.setStatusUI = function(id, status) {
-  setStatus(id, status);
-  document.dispatchEvent(new Event("stateChange"));
-};
-
-window.initNote = function(id) {
-  const el = document.getElementById("note");
-  el.addEventListener("input", (e) => {
-    setNote(id, e.target.value);
-  });
-};
