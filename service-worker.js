@@ -10,7 +10,6 @@ const CORE_FILES = [
   "./js/ui.js"
 ];
 
-// Install
 self.addEventListener("install", event => {
   self.skipWaiting();
   event.waitUntil(
@@ -18,33 +17,25 @@ self.addEventListener("install", event => {
   );
 });
 
-// Activate
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(
-        keys.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      )
+      Promise.all(keys.map(key => {
+        if (key !== CACHE_NAME) return caches.delete(key);
+      }))
     )
   );
   self.clients.claim();
 });
 
-// Fetch
 self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
 
-  // ❗ JSON immer frisch laden
   if (url.pathname.includes("techniques.json") || url.pathname.includes("version.json")) {
     event.respondWith(fetch(event.request));
     return;
   }
 
-  // Standard Cache First
   event.respondWith(
     caches.match(event.request).then(res => res || fetch(event.request))
   );

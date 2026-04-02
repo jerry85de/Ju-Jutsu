@@ -4,11 +4,22 @@ import { renderHome, renderBelt } from "./ui.js";
 
 const app = document.getElementById("app");
 
+async function checkForUpdate() {
+  const res = await fetch("./data/version.json");
+  const data = await res.json();
+  const current = localStorage.getItem("app_version");
+
+  if (current && current !== data.version) {
+    caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
+    localStorage.clear();
+    location.reload();
+  }
+
+  localStorage.setItem("app_version", data.version);
+}
+
 async function init() {
   await checkForUpdate();
-  await loadData();
-  render();
-}
   await loadData();
   render();
 }
@@ -25,23 +36,6 @@ function render() {
 window.addEventListener("hashchange", render);
 init();
 
-async function checkForUpdate() {
-  const res = await fetch("./data/version.json");
-  const data = await res.json();
-
-  const current = localStorage.getItem("app_version");
-
-  if (current && current !== data.version) {
-    console.log("Neue Version erkannt → Cache wird gelöscht");
-
-    // Cache löschen
-    caches.keys().then(keys => {
-      keys.forEach(k => caches.delete(k));
-    });
-
-    localStorage.clear();
-    location.reload();
-  }
-
-  localStorage.setItem("app_version", data.version);
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js");
 }
