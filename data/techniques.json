@@ -1,0 +1,41 @@
+{
+  "belts": [
+    {
+      "id": "white-yellow",
+      "name": "Weiß-Gelb",
+      "order": 1,
+      "requirements": [
+        {
+          "type": "age",
+          "label": "Mindestalter",
+          "value": "7 Jahre"
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "throws",
+      "name": "Würfe"
+    }
+  ],
+  "techniques": [
+    {
+      "id": "o-soto-gari",
+      "name": "O-soto-gari",
+      "translation": "Große Außensichel",
+      "description": "Gleichgewicht brechen nach hinten außen",
+      "media": {
+        "images": [],
+        "videos": []
+      },
+      "beltRefs": [
+        {
+          "beltId": "white-yellow",
+          "categoryId": "throws",
+          "order": 1
+        }
+      ]
+    }
+  ]
+}
