@@ -10,6 +10,12 @@ import {
 
 import { getStatus, setStatus, getNote, setNote } from "./storage.js";
 
+const progress = getProgress(techniques);
+
+<div class="progress-bar">
+  <div class="progress-fill" style="width:${progress}%"></div>
+</div>
+
 function getStatusLabel(status) {
   if (status === "learning") return "Lernen";
   if (status === "practicing") return "Üben";
