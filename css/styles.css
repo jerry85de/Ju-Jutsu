@@ -20,3 +20,24 @@ textarea {
   width: 100%;
   height: 100px;
 }
+
+.status {
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.status-learning {
+  background: #ddd;
+}
+
+.status-practicing {
+  background: orange;
+  color: white;
+}
+
+.status-ready {
+  background: green;
+  color: white;
+}
