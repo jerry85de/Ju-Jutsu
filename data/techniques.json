@@ -8,20 +8,20 @@
     },
     {
       "id": "orange",
+      "name": "4. Kyu",
+      "order": 2,
+      "requirements": []
+    },
+    {
+      "id": "green",
       "name": "3. Kyu",
       "order": 3,
       "requirements": []
     },
     {
-      "id": "green",
+      "id": "blue",
       "name": "2. Kyu",
       "order": 4,
-      "requirements": []
-    },
-    {
-      "id": "blue",
-      "name": "1. Kyu",
-      "order": 5,
       "requirements": []
     }
   ],
