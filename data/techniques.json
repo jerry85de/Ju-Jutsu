@@ -1,12 +1,11 @@
 {
   "belts": [
-    { "id": "white-yellow", "name": "Weiß-Gelb", "order": 1, "requirements": [] },
-    { "id": "yellow", "name": "Gelb", "order": 2, "requirements": [] },
-    { "id": "orange", "name": "Orange", "order": 3, "requirements": [] },
-    { "id": "green", "name": "Grün", "order": 4, "requirements": [] },
-    { "id": "blue", "name": "Blau", "order": 5, "requirements": [] },
-    { "id": "brown", "name": "Braun", "order": 6, "requirements": [] },
-    { "id": "black-1-dan", "name": "1. Dan", "order": 7, "requirements": [] }
+    { "id": "yellow", "name": "Gelb", "order": 1, "requirements": [] },
+    { "id": "orange", "name": "Orange", "order": 2, "requirements": [] },
+    { "id": "green", "name": "Grün", "order": 3, "requirements": [] },
+    { "id": "blue", "name": "Blau", "order": 4, "requirements": [] },
+    { "id": "brown", "name": "Braun", "order": 5, "requirements": [] },
+    { "id": "black-1-dan", "name": "1. Dan", "order": 6, "requirements": [] }
   ],
   "categories": [
   { "id": "ukemi", "name": "Fallschule" },
@@ -25,7 +24,7 @@
       "description": "Beispieltechnik",
       "media": { "images": [], "videos": [] },
       "beltRefs": [
-        { "beltId": "white-yellow", "categoryId": "throws", "order": 1 }
+        { "beltId": "yellow", "categoryId": "throws", "order": 1 }
       ]
     }
   ]
