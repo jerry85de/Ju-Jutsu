@@ -1,63 +1,90 @@
-"belts": [
-  {
-    "id": "white-yellow",
-    "name": "Weiß-Gelb",
-    "order": 1,
-    "requirements": [
-      { "type": "age", "label": "Mindestalter", "value": "ca. 7 Jahre" },
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6 Monate" }
-    ]
-  },
-  {
-    "id": "yellow",
-    "name": "Gelb",
-    "order": 2,
-    "requirements": [
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6 Monate" }
-    ]
-  },
-  {
-    "id": "orange",
-    "name": "Orange",
-    "order": 3,
-    "requirements": [
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6–9 Monate" }
-    ]
-  },
-  {
-    "id": "green",
-    "name": "Grün",
-    "order": 4,
-    "requirements": [
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 9–12 Monate" }
-    ]
-  },
-  {
-    "id": "blue",
-    "name": "Blau",
-    "order": 5,
-    "requirements": [
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 12 Monate" }
-    ]
-  },
-  {
-    "id": "brown",
-    "name": "Braun",
-    "order": 6,
-    "requirements": [
-      { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 12–18 Monate" },
-      { "type": "seminar", "label": "Lehrgänge", "value": "empfohlen / teilweise verpflichtend" }
-    ]
-  },
-  {
-    "id": "black-1-dan",
-    "name": "1. Dan",
-    "order": 7,
-    "requirements": [
-      { "type": "age", "label": "Mindestalter", "value": "i. d. R. 18 Jahre" },
-      { "type": "training", "label": "Vorbereitungszeit", "value": "mehrere Jahre" },
-      { "type": "seminar", "label": "Pflichtlehrgänge", "value": "Dan-Vorbereitung / Techniklehrgänge" },
-      { "type": "other", "label": "Zusatz", "value": "Graduierungsempfehlung / Verein / Verband" }
-    ]
-  }
-]
+{
+  "belts": [
+    {
+      "id": "white-yellow",
+      "name": "Weiß-Gelb",
+      "order": 1,
+      "requirements": [
+        { "type": "age", "label": "Mindestalter", "value": "ca. 7 Jahre" },
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6 Monate" }
+      ]
+    },
+    {
+      "id": "yellow",
+      "name": "Gelb",
+      "order": 2,
+      "requirements": [
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6 Monate" }
+      ]
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "order": 3,
+      "requirements": [
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 6–9 Monate" }
+      ]
+    },
+    {
+      "id": "green",
+      "name": "Grün",
+      "order": 4,
+      "requirements": [
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 9–12 Monate" }
+      ]
+    },
+    {
+      "id": "blue",
+      "name": "Blau",
+      "order": 5,
+      "requirements": [
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 12 Monate" }
+      ]
+    },
+    {
+      "id": "brown",
+      "name": "Braun",
+      "order": 6,
+      "requirements": [
+        { "type": "training", "label": "Vorbereitungszeit", "value": "ca. 12–18 Monate" },
+        { "type": "seminar", "label": "Lehrgänge", "value": "empfohlen / teilweise verpflichtend" }
+      ]
+    },
+    {
+      "id": "black-1-dan",
+      "name": "1. Dan",
+      "order": 7,
+      "requirements": [
+        { "type": "age", "label": "Mindestalter", "value": "i. d. R. 18 Jahre" },
+        { "type": "training", "label": "Vorbereitungszeit", "value": "mehrere Jahre" },
+        { "type": "seminar", "label": "Pflichtlehrgänge", "value": "Dan-Vorbereitung / Techniklehrgänge" },
+        { "type": "other", "label": "Zusatz", "value": "Graduierungsempfehlung / Verein / Verband" }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": "throws",
+      "name": "Würfe"
+    }
+  ],
+  "techniques": [
+    {
+      "id": "o-soto-gari",
+      "name": "O-soto-gari",
+      "translation": "Große Außensichel",
+      "description": "Gleichgewicht brechen nach hinten außen",
+      "media": {
+        "images": [],
+        "videos": []
+      },
+      "beltRefs": [
+        {
+          "beltId": "white-yellow",
+          "categoryId": "throws",
+          "order": 1
+        }
+      ]
+    }
+  ]
+}
