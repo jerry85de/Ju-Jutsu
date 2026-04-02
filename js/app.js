@@ -23,12 +23,10 @@ function render() {
 }
 
 window.addEventListener("hashchange", render);
+document.addEventListener("stateChange", render);
 
 init();
 
-// Service Worker
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("./service-worker.js");
 }
-
-document.addEventListener("stateChange", render);

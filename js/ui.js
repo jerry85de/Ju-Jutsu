@@ -1,5 +1,3 @@
-
-
 import {
   getBelts,
   getBeltById,
@@ -10,12 +8,6 @@ import {
 
 import { getStatus, setStatus, getNote, setNote } from "./storage.js";
 
-const progress = getProgress(techniques);
-
-<div class="progress-bar">
-  <div class="progress-fill" style="width:${progress}%"></div>
-</div>
-
 function getStatusLabel(status) {
   if (status === "learning") return "Lernen";
   if (status === "practicing") return "Üben";
@@ -23,34 +15,41 @@ function getStatusLabel(status) {
   return "";
 }
 
+function getProgress(techniques) {
+  if (techniques.length === 0) return 0;
+  const ready = techniques.filter(t => getStatus(t.id) === "ready").length;
+  return Math.round((ready / techniques.length) * 100);
+}
+
 export function renderHome() {
   const belts = getBelts();
-
   return `
     <h2>Gürtel</h2>
     <ul>
-      ${belts.map(b => `
-        <li><a href="#/belt/${b.id}">${b.name}</a></li>
-      `).join("")}
+      ${belts.map(b => `<li><a href="#/belt/${b.id}">${b.name}</a></li>`).join("")}
     </ul>
   `;
 }
 
 export function renderBelt(id) {
-  <p><strong>Fortschritt:</strong> ${getProgress(techniques)}%</p>
   const belt = getBeltById(id);
   const techniques = getTechniquesByBelt(id);
   const categories = getCategories();
+
   if (!belt) return "<p>Gurt nicht gefunden</p>";
+
+  const progress = getProgress(techniques);
 
   return `
     <h2>${belt.name}</h2>
+    <p><strong>Fortschritt:</strong> ${progress}%</p>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:${progress}%"></div>
+    </div>
 
     <h3>Voraussetzungen</h3>
     <ul>
-      ${belt.requirements.map(r => `
-        <li><strong>${r.label}:</strong> ${r.value}</li>
-      `).join("")}
+      ${belt.requirements.map(r => `<li><strong>${r.label}:</strong> ${r.value}</li>`).join("")}
     </ul>
 
     <h3>Techniken</h3>
@@ -69,12 +68,10 @@ export function renderBelt(id) {
         <ul>
           ${filtered.map(t => `
             <li>
-              <a href="#/technique/${t.id}">
-                ${t.name}
-              </a>
+              <a href="#/technique/${t.id}">${t.name}</a>
               <span class="status status-${getStatus(t.id)}">
-  ${getStatusLabel(getStatus(t.id))}
-</span>
+                ${getStatusLabel(getStatus(t.id))}
+              </span>
             </li>
           `).join("")}
         </ul>
@@ -118,9 +115,3 @@ window.initNote = function(id) {
     setNote(id, e.target.value);
   });
 };
-function getProgress(techniques) {
-  if (techniques.length === 0) return 0;
-
-  const ready = techniques.filter(t => getStatus(t.id) === "ready").length;
-  return Math.round((ready / techniques.length) * 100);
-}

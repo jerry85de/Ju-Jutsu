@@ -5,8 +5,5 @@ export function getRoute() {
 
   const parts = hash.replace("#/", "").split("/");
 
-  return {
-    page: parts[0],
-    id: parts[1]
-  };
+  return { page: parts[0], id: parts[1] };
 }

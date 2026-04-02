@@ -1,49 +1,12 @@
 {
   "belts": [
-    {
-      "id": "white-yellow",
-      "name": "Weiß-Gelb",
-      "order": 1,
-      "requirements": [
-        { "type": "age", "label": "Mindestalter", "value": "ca. 7 Jahre" }
-      ]
-    },
-    {
-      "id": "yellow",
-      "name": "Gelb",
-      "order": 2,
-      "requirements": []
-    },
-    {
-      "id": "orange",
-      "name": "Orange",
-      "order": 3,
-      "requirements": []
-    },
-    {
-      "id": "green",
-      "name": "Grün",
-      "order": 4,
-      "requirements": []
-    },
-    {
-      "id": "blue",
-      "name": "Blau",
-      "order": 5,
-      "requirements": []
-    },
-    {
-      "id": "brown",
-      "name": "Braun",
-      "order": 6,
-      "requirements": []
-    },
-    {
-      "id": "black-1-dan",
-      "name": "1. Dan",
-      "order": 7,
-      "requirements": []
-    }
+    { "id": "white-yellow", "name": "Weiß-Gelb", "order": 1, "requirements": [] },
+    { "id": "yellow", "name": "Gelb", "order": 2, "requirements": [] },
+    { "id": "orange", "name": "Orange", "order": 3, "requirements": [] },
+    { "id": "green", "name": "Grün", "order": 4, "requirements": [] },
+    { "id": "blue", "name": "Blau", "order": 5, "requirements": [] },
+    { "id": "brown", "name": "Braun", "order": 6, "requirements": [] },
+    { "id": "black-1-dan", "name": "1. Dan", "order": 7, "requirements": [] }
   ],
   "categories": [
     { "id": "throws", "name": "Würfe" }
@@ -53,14 +16,10 @@
       "id": "o-soto-gari",
       "name": "O-soto-gari",
       "translation": "Große Außensichel",
-      "description": "Gleichgewicht brechen nach hinten außen",
+      "description": "Beispieltechnik",
       "media": { "images": [], "videos": [] },
       "beltRefs": [
-        {
-          "beltId": "white-yellow",
-          "categoryId": "throws",
-          "order": 1
-        }
+        { "beltId": "white-yellow", "categoryId": "throws", "order": 1 }
       ]
     }
   ]
