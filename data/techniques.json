@@ -50,6 +50,10 @@
       "id": "move",
       "name": "Bewegungsformen"
     }
+        {
+      "id": "applied",
+      "name": "Anwendungsformen"
+    }
   ],
   "techniques": [
     {
@@ -63,7 +67,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "ukemi",
           "order": 1
         }
@@ -80,7 +84,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "defense",
           "order": 1
         }
@@ -97,7 +101,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "defense",
           "order": 2
         }
@@ -114,7 +118,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "defense",
           "order": 3
         }
@@ -131,7 +135,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "defense",
           "order": 4
         }
@@ -148,7 +152,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "strikes",
           "order": 1
         }
@@ -165,7 +169,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "strikes",
           "order": 2
         }
@@ -182,7 +186,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "strikes",
           "order": 3
         }
@@ -199,8 +203,25 @@
       },
       "beltRefs": [
         {
-          "beltId": "white-yellow",
+          "beltId": "yellow",
           "categoryId": "throws",
+          "order": 1
+        }
+      ]
+    },
+        {
+      "id": "freie-sv",
+      "name": "Verteidigung gegen 3 von 5 angesagten Angriffen",
+      "translation": "",
+      "description": "",
+      "media": {
+        "images": [],
+        "videos": []
+      },
+      "beltRefs": [
+        {
+          "beltId": "yellow",
+          "categoryId": "defense",
           "order": 1
         }
       ]
@@ -216,7 +237,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "ukemi",
           "order": 1
         }
@@ -233,7 +254,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "ukemi",
           "order": 2
         }
@@ -284,7 +305,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "strikes",
           "order": 1
         }
@@ -301,7 +322,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "strikes",
           "order": 2
         }
@@ -318,7 +339,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "throws",
           "order": 1
         }
@@ -335,7 +356,7 @@
       },
       "beltRefs": [
         {
-          "beltId": "yellow",
+          "beltId": "orange",
           "categoryId": "throws",
           "order": 2
         }
