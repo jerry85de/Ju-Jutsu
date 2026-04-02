@@ -1,3 +1,5 @@
+
+
 import {
   getBelts,
   getBeltById,
@@ -7,6 +9,13 @@ import {
 } from "./data.js";
 
 import { getStatus, setStatus, getNote, setNote } from "./storage.js";
+
+function getStatusLabel(status) {
+  if (status === "learning") return "Lernen";
+  if (status === "practicing") return "Üben";
+  if (status === "ready") return "Bereit";
+  return "";
+}
 
 export function renderHome() {
   const belts = getBelts();
