@@ -109,7 +109,7 @@ export function renderTechnique(id) {
 
 window.setStatusUI = function(id, status) {
   setStatus(id, status);
-  location.reload();
+  document.dispatchEvent(new Event("stateChange"));
 };
 
 window.initNote = function(id) {
