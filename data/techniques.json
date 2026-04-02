@@ -2,14 +2,14 @@
   "belts": [
     {
       "id": "yellow",
-      "name": "4. Kyu",
-      "order": 2,
+      "name": "5. Kyu",
+      "order": 1,
       "requirements": []
     },
     {
       "id": "orange",
-      "name": "3. Kyu",
-      "order": 3,
+      "name": "4. Kyu",
+      "order": 2,
       "requirements": []
     },
     {
