@@ -25,7 +25,6 @@ export function renderBelt(id) {
   const belt = getBeltById(id);
   const techniques = getTechniquesByBelt(id);
   const categories = getCategories();
-
   if (!belt) return "<p>Gurt nicht gefunden</p>";
 
   return `
@@ -57,7 +56,9 @@ export function renderBelt(id) {
               <a href="#/technique/${t.id}">
                 ${t.name}
               </a>
-              (${getStatus(t.id)})
+              <span class="status status-${getStatus(t.id)}">
+  ${getStatusLabel(getStatus(t.id))}
+</span>
             </li>
           `).join("")}
         </ul>
