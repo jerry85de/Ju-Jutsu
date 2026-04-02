@@ -31,6 +31,7 @@ export function renderHome() {
 }
 
 export function renderBelt(id) {
+  <p><strong>Fortschritt:</strong> ${getProgress(techniques)}%</p>
   const belt = getBeltById(id);
   const techniques = getTechniquesByBelt(id);
   const categories = getCategories();
