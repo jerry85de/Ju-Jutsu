@@ -111,3 +111,9 @@ window.initNote = function(id) {
     setNote(id, e.target.value);
   });
 };
+function getProgress(techniques) {
+  if (techniques.length === 0) return 0;
+
+  const ready = techniques.filter(t => getStatus(t.id) === "ready").length;
+  return Math.round((ready / techniques.length) * 100);
+}
