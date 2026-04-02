@@ -8,7 +8,6 @@ function saveStorage(data) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
-// STATUS
 export function getStatus(id) {
   const data = loadStorage();
   return data.techniqueStatus?.[id] || "learning";
@@ -21,7 +20,6 @@ export function setStatus(id, status) {
   saveStorage(data);
 }
 
-// NOTIZEN
 export function getNote(id) {
   const data = loadStorage();
   return data.techniqueNotes?.[id] || "";

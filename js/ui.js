@@ -90,7 +90,6 @@ export function renderTechnique(id) {
   `;
 }
 
-// GLOBAL (einfach gehalten)
 window.setStatusUI = function(id, status) {
   setStatus(id, status);
   location.reload();

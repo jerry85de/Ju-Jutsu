@@ -1,7 +1,7 @@
 let DATA = null;
 
 export async function loadData() {
-  const res = await fetch("data/techniques.json");
+  const res = await fetch("./data/techniques.json");
   DATA = await res.json();
 }
 
@@ -11,6 +11,7 @@ export function getBelts() {
 
 export function getBeltById(id) {
   return DATA.belts.find(b => b.id === id);
+}
 
 export function getTechniquesByBelt(beltId) {
   return DATA.techniques.filter(t =>
@@ -24,5 +25,4 @@ export function getTechniqueById(id) {
 
 export function getCategories() {
   return DATA.categories;
-}
 }

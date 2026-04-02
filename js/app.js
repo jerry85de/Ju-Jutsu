@@ -1,12 +1,13 @@
 import { loadData } from "./data.js";
 import { getRoute } from "./router.js";
-import { renderHome, renderBelt } from "./ui.js";
+import { renderHome, renderBelt, renderTechnique } from "./ui.js";
 
 const app = document.getElementById("app");
 
 async function init() {
   await loadData();
-  import { renderTechnique } from "./ui.js";
+  render();
+}
 
 function render() {
   const route = getRoute();
@@ -21,19 +22,11 @@ function render() {
   }
 }
 
-}
-
-function render() {
-  const route = getRoute();
-
-  if (route.page === "belt") {
-    app.innerHTML = renderBelt(route.id);
-  } else {
-    app.innerHTML = renderHome();
-  }
-}
-
 window.addEventListener("hashchange", render);
 
 init();
 
+// Service Worker
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js");
+}
