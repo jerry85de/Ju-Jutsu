@@ -20,3 +20,24 @@ function render() {
 
 window.addEventListener("hashchange", render);
 init();
+
+async function checkForUpdate() {
+  const res = await fetch("./data/version.json");
+  const data = await res.json();
+
+  const current = localStorage.getItem("app_version");
+
+  if (current && current !== data.version) {
+    console.log("Neue Version erkannt → Cache wird gelöscht");
+
+    // Cache löschen
+    caches.keys().then(keys => {
+      keys.forEach(k => caches.delete(k));
+    });
+
+    localStorage.clear();
+    location.reload();
+  }
+
+  localStorage.setItem("app_version", data.version);
+}
