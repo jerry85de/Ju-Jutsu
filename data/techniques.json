@@ -1,12 +1,6 @@
 {
   "belts": [
     {
-      "id": "white-yellow",
-      "name": "5. Kyu",
-      "order": 1,
-      "requirements": []
-    },
-    {
       "id": "yellow",
       "name": "4. Kyu",
       "order": 2,
@@ -51,6 +45,10 @@
     {
       "id": "locks",
       "name": "Hebeltechniken"
+    }
+    {
+      "id": "move",
+      "name": "Bewegungsformen"
     }
   ],
   "techniques": [
