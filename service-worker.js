@@ -1,21 +1,51 @@
-const CACHE_NAME = "jujutsu-v3";
+const CACHE_NAME = "jujutsu-cache-v1";
 
-const FILES = [
+const CORE_FILES = [
   "./",
   "./index.html",
   "./css/styles.css",
   "./js/app.js",
   "./js/data.js",
   "./js/router.js",
-  "./js/ui.js",
-  "./js/storage.js",
-  "./data/techniques.json"
+  "./js/ui.js"
 ];
 
-self.addEventListener("install", e => {
-  e.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(FILES)));
+// Install
+self.addEventListener("install", event => {
+  self.skipWaiting();
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(CORE_FILES))
+  );
 });
 
-self.addEventListener("fetch", e => {
-  e.respondWith(caches.match(e.request).then(res => res || fetch(e.request)));
+// Activate
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys.map(key => {
+          if (key !== CACHE_NAME) {
+            return caches.delete(key);
+          }
+        })
+      )
+    )
+  );
+  self.clients.claim();
+});
+
+// Fetch
+self.addEventListener("fetch", event => {
+  const url = new URL(event.request.url);
+
+  // ❗ JSON immer frisch laden
+  if (url.pathname.includes("techniques.json") || url.pathname.includes("version.json")) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
+  // Standard Cache First
+  event.respondWith(
+    caches.match(event.request).then(res => res || fetch(event.request))
+  );
 });
