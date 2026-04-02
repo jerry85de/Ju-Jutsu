@@ -8,13 +8,22 @@
     { "id": "black-1-dan", "name": "1. Dan", "order": 6, "requirements": [] }
   ],
   "categories": [
-  { "id": "ukemi", "name": "Fallschule" },
+  { "id": "ukemi", "name": "Falltechniken" },
+  { "id": "ground", "name": "Bodentechniken" },
+  { "id": "applied", "name": "Anwendungsformen" },
+  { "id": "counter", "name": "Abwehrtechniken" },
+  { "id": "stick", "name": "Stockabwehr /-anwendung" },
+  { "id": "knife", "name": "Messerabwehr" },
+  { "id": "conti", "name": "Weiterführungstechniken" },
+  { "id": "selfdevense", "name": "Freie Selbstverteidigung" },
+  { "id": "chokes", "name": "Würge- und Nervendrucktechniken" },
   { "id": "throws", "name": "Würfe" },
   { "id": "holds", "name": "Haltegriffe" },
   { "id": "locks", "name": "Hebel" },
   { "id": "strikes", "name": "Atemi-Techniken" },
   { "id": "combinations", "name": "Kombinationen" },
   { "id": "defense", "name": "Abwehrtechniken" }
+  { "id": "move", "name": "Bewegungsformen" }
 ],
   "techniques": [
     {
