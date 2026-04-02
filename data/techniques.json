@@ -9,8 +9,14 @@
     { "id": "black-1-dan", "name": "1. Dan", "order": 7, "requirements": [] }
   ],
   "categories": [
-    { "id": "throws", "name": "Würfe" }
-  ],
+  { "id": "ukemi", "name": "Fallschule" },
+  { "id": "throws", "name": "Würfe" },
+  { "id": "holds", "name": "Haltegriffe" },
+  { "id": "locks", "name": "Hebel" },
+  { "id": "strikes", "name": "Atemi-Techniken" },
+  { "id": "combinations", "name": "Kombinationen" },
+  { "id": "defense", "name": "Abwehrtechniken" }
+],
   "techniques": [
     {
       "id": "o-soto-gari",
